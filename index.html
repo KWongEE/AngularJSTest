@@ -4,29 +4,12 @@
     <meta charset="utf-8">
     <title>Angular App</title>
   </head>
-  <body ng-controller="mainCtrl as vm">
-    <h1> {{ vm.hello }}</h1>
-    <input type="text" ng-model="vm.hello">
-    <h3>List of fruits</h3>
-    <p>Search by value:</p>
-    <input type="text" ng-model="vm.search">
-
-    <ul>
-      <li ng-repeat="fruit in vm.fruits | filter: vm.search">{{fruit | makePlural}}</li>
-    </ul>
-
-    <button class="btn btn-primary" ng-click="vm.alertMe()">Alert something</button>
+  <body>
     <posts-list></posts-list>
-<!--
-        <ul>
-          <li ng-repeat="post in vm.posts | filter: vm.search">
-          title: {{post.title}}
-          body: {{post.body}}</li>
-        </ul> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
     <script src="app.js" charset="utf-8"></script>
-    <script src="posts-list/posts-list.component.js" charset="utf-8"></script>
+    <script src="charts/charts.component.js" charset="utf-8"></script>
     <script lang="javascript" src="bower_components/js-xlsx/dist/xlsx.full.min.js"></script>
 
     <script src="bower_components/chart.js/dist/Chart.min.js"></script>
