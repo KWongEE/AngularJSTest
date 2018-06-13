@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="firstAngularApp">
+<html lang="en" ng-app="app">
   <head>
     <meta charset="utf-8">
     <title>Angular App</title>
   </head>
   <body>
-    <posts-list></posts-list>
+    <charts></charts>
+
+    <div id="container" class="container">
+      <div class="row" ng-controller="StackedBarCtrl">
+        <div class="col-lg-6 col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">Stacked Bar Chart</div>
+            <div class="panel-body">
+              <canvas class="chart chart-bar" chart-data="data" chart-labels="labels"
+                      chart-options="options" chart-series="series"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
     <script src="app.js" charset="utf-8"></script>
