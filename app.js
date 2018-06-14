@@ -69,7 +69,14 @@ app.controller('LineCtrl', function ($scope, $rootScope, $interval){
     $scope.onClick = function (points, evt) {
       console.log(points, evt);
     };
+
     $scope.options = {
+      layout: {
+        //This is for tooltip when hovering over chart. Seems to be issue with AngularJS Chart library
+      padding: {
+         bottom: 300
+      }
+   },
       scales: {
         yAxes: [
           {
@@ -97,6 +104,7 @@ app.controller('LineCtrl', function ($scope, $rootScope, $interval){
        $scope.data = $scope.data;
       }
     }
+    console.log('Finished')
   });
 });
 
@@ -150,6 +158,12 @@ app.controller("BarCtrl", function ($scope, $rootScope, $interval) {
       console.log(points, evt);
     };
     $scope.options = {
+      layout: {
+        //This is for tooltip when hovering over chart. Seems to be issue with AngularJS Chart library
+      padding: {
+         bottom: 300
+      }
+   },
       scales: {
         yAxes: [
           {
