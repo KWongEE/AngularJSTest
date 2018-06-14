@@ -35,10 +35,10 @@ function SheetJSImportDirective() {
               dictionary[element["Airline Name"]].push(element);
             }
             //Sort by airport codes
-            if (aircode[element["Airport Code"]] == "-"){
+            if (aircode[element["Airport Code"]] == null){
               aircode[element["Airport Code"]] = [element];
             } else {
-              aircode[element["Airport Code"]] = [element];
+              aircode[element["Airport Code"]].push(element);
             }
           });
           //Made into object for performance
