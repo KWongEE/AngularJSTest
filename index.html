@@ -5,31 +5,22 @@
     <title>Angular App</title>
   </head>
   <body>
-    <charts></charts>
+    <ul class="menu">
+    <li><a href="#!/view1">view1</a></li>
+    <li><a href="#!/view2">view2</a></li>
+  </ul>
+    <div ng-view></div>
 
-    <div id="container" class="container">
-      <div class="row" ng-controller="LineCtrl">
-        <div class="col-lg-6 col-sm-12">
-          <div class="panel panel-default">
-            <div class="panel-heading">Line Chart</div>
-            <div class="panel-body">
-              <canvas id="line" class="chart chart-line" chart-data="data"
-              chart-labels="labels" chart-series="series" chart-options="options"
-              chart-click="onClick">
-              </canvas>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
     <script src="app.js" charset="utf-8"></script>
     <script src="charts/charts.component.js" charset="utf-8"></script>
     <script lang="javascript" src="bower_components/js-xlsx/dist/xlsx.full.min.js"></script>
-
+    <script src="view1/view1.js"></script>
+    <script src="view2/view2.js"></script>
     <script src="bower_components/chart.js/dist/Chart.min.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
     <link href="main.css" rel="stylesheet">

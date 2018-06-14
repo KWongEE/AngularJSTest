@@ -1,0 +1,17 @@
+<h1> This is view 1 </h1>
+<charts></charts>
+<div id="container" class="container">
+  <div class="row" ng-controller="LineCtrl">
+    <div class="col-lg-6 col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Line Chart</div>
+        <div class="panel-body">
+          <canvas id="line" class="chart chart-line" chart-data="data"
+          chart-labels="labels" chart-series="series" chart-options="options"
+          chart-click="onClick">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

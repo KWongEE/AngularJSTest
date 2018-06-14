@@ -1,4 +1,10 @@
-var app = angular.module('app', ["chart.js"]);
+var app = angular.module('app', ["chart.js", "ngRoute",,"app.view1", "app.view2"]);
+
+app.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+  $locationProvider.hashPrefix('!');
+
+  $routeProvider.otherwise({redirectTo: '/view1'});
+}]);
 
 app.config(function (ChartJsProvider) {
   // Configure all charts
@@ -99,5 +105,18 @@ app.controller('LineCtrl', function ($scope, $rootScope, $interval){
        $scope.data = $scope.data;
       }
     }
+  });
+});
+
+app.controller("BarCtrl", function ($scope, $rootScope, $interval) {
+  $rootScope.$on('data', function(event, data) {
+    debugger;
+  $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  $scope.series = ['Series A', 'Series B'];
+
+  $scope.data = [
+    [65, 59, 80, 81, 56, 55, 40],
+    [28, 48, 40, 19, 86, 27, 90]
+  ];
   });
 });
