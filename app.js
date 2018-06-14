@@ -14,7 +14,8 @@ app.config(function (ChartJsProvider) {
   });
 });
 
-app.controller('LineCtrl', function ($scope, $rootScope){
+app.controller('LineCtrl', function ($scope, $rootScope, $interval){
+
   $rootScope.$on('data', function(event, data) {
     delete data["undefined"];
 
@@ -62,30 +63,41 @@ app.controller('LineCtrl', function ($scope, $rootScope){
         }
       }
     }
-   $scope.labels = months;
-   $scope.series = airline_names;
-   $scope.data = dataset;
 
-   $scope.onClick = function (points, evt) {
-     console.log(points, evt);
-   };
-   $scope.options = {
-     scales: {
-       yAxes: [
-         {
-           id: 'y-axis-1',
-           type: 'linear',
-           display: true,
-           position: 'left'
-         },
-         {
-           id: 'y-axis-2',
-           type: 'linear',
-           display: true,
-           position: 'right'
-         }
-       ]
-     }
-   };
- });
- });
+    $scope.labels = months;
+    $scope.series = airline_names;
+    $scope.data = dataset;
+
+    $scope.onClick = function (points, evt) {
+      console.log(points, evt);
+    };
+    $scope.options = {
+      scales: {
+        yAxes: [
+          {
+            id: 'y-axis-1',
+            type: 'linear',
+            display: true,
+            position: 'left'
+          },
+          {
+            id: 'y-axis-2',
+            type: 'linear',
+            display: true,
+            position: 'right'
+          }
+        ]
+      }
+    };
+    $interval(function () {
+     getLiveChartData();
+   }, 20);
+
+   function getLiveChartData () {
+     if ($scope.data.length) {
+       $scope.labels = $scope.labels;
+       $scope.data = $scope.data;
+      }
+    }
+  });
+});

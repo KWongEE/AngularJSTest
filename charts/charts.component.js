@@ -24,6 +24,7 @@ function SheetJSImportDirective() {
           var workbook = XLSX.read(bstr, {type:'binary'});
           var sheet_name_list = workbook.SheetNames;
           var airlines = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]])
+          //To JSON to manage data more easily
           var dictionary = {};
 
           airlines.forEach(function(element){
@@ -33,8 +34,10 @@ function SheetJSImportDirective() {
               dictionary[element["Airline Name"]].push(element);
             }
           });
+          //Made into object for performance
 
           $scope.$root.$broadcast('data', dictionary);
+          //rootScope to access in app.js. 
         };
         reader.readAsBinaryString(changeEvent.target.files[0]);
       });
