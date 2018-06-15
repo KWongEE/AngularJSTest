@@ -84,12 +84,6 @@ app.controller('LineCtrl', function ($scope, $rootScope, $interval){
             type: 'linear',
             display: true,
             position: 'left'
-          },
-          {
-            id: 'y-axis-2',
-            type: 'linear',
-            display: true,
-            position: 'right'
           }
         ]
       }
@@ -171,12 +165,6 @@ app.controller("BarCtrl", function ($scope, $rootScope, $interval) {
             type: 'linear',
             display: true,
             position: 'left'
-          },
-          {
-            id: 'y-axis-2',
-            type: 'linear',
-            display: true,
-            position: 'right'
           }
         ]
       }
